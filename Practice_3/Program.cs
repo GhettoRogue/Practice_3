@@ -44,7 +44,7 @@ static void FindEmployees(string search, List<Employee> employees)
     Console.WriteLine("Employees not found.");
 }
 
-/*foreach (var employee in employees)
+/*/*foreach (var employee in employees)
 {
     if (employee.Id.ToString() == search ||
         employee.FullName.ToLower().Contains(search.ToLower()) ||
@@ -53,19 +53,4 @@ static void FindEmployees(string search, List<Employee> employees)
     {
         result.Add(employee);
     }
-}
-
-if (result.Count > 0)
-{
-    Console.WriteLine($"Found {result.Count} employee.");
-    foreach (var employee in result)
-    {
-        Console.WriteLine(
-            $"ID: {employee.Id}," +
-            $" FullName: {employee.FullName}," +
-            $" Position: {employee.Position}," +
-            $" Department: {employee.Department}");
-    }
-
-    Console.WriteLine("Employees not found.");
 }*/
