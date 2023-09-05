@@ -3,7 +3,7 @@
 var employees = new List<Employee>()
 {
     new Employee() { Id = 1, FullName = "Vladimir Ignatiew", Position = "Engineer", Department = "Development" },
-    new Employee() { Id = 2, FullName = "Johny Smith", Position = "Manager", Department = "Sales" },
+    new Employee() { Id = 2, FullName = "Mike Smith", Position = "Manager", Department = "Sales" },
     new Employee() { Id = 3, FullName = "John Smith", Position = "Accountant", Department = "Financial" }
 };
 
