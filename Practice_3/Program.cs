@@ -26,8 +26,8 @@ static void FindEmployees(string search, List<Employee> employees)
     {
         if (item.Id.ToString() == search ||
             item.FullName.ToLower().Contains(search.ToLower()) ||
-            item.Position.ToString() == search ||
-            item.Department.ToString() == search)
+            item.Position == search ||
+            item.Department == search)
         {
             result.Add(item);
         }
@@ -35,6 +35,8 @@ static void FindEmployees(string search, List<Employee> employees)
         if (result.Count > 0)
         {
             Console.WriteLine($"Found {result.Count} employee.");
+            
+            
             foreach (var employee in result)
             {
                 Console.WriteLine(
