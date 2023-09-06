@@ -21,36 +21,37 @@ string UserInput()
 
 static void FindEmployees(string search, List<Employee> employees)
 {
-    var result = employees.FindAll(
-        temp =>
-            temp.Id.ToString() == search ||
-            temp.FullName.ToLower().Contains(search.ToLower()) ||
-            temp.Position.ToString() == search ||
-            temp.Department.ToString() == search);
-
-    if (result.Count > 0)
+    var result = new List<Employee>();
+    foreach (var item in employees)
     {
-        Console.WriteLine($"Found {result.Count} employee.");
-        foreach (var employee in result)
+        if (item.Id.ToString() == search ||
+            item.FullName.ToLower().Contains(search.ToLower()) ||
+            item.Position.ToString() == search ||
+            item.Department.ToString() == search)
         {
-            Console.WriteLine(
-                $"ID: {employee.Id}," +
-                $" FullName: {employee.FullName}," +
-                $" Position: {employee.Position}," +
-                $" Department: {employee.Department}");
+            result.Add(item);
         }
-    }
 
-    Console.WriteLine("Employees not found.");
+        if (result.Count > 0)
+        {
+            Console.WriteLine($"Found {result.Count} employee.");
+            foreach (var employee in result)
+            {
+                Console.WriteLine(
+                    $"ID: {employee.Id}," +
+                    $" FullName: {employee.FullName}," +
+                    $" Position: {employee.Position}," +
+                    $" Department: {employee.Department}");
+            }
+        }
+
+        Console.WriteLine("Employees not found.");
+    }
 }
 
-/*/*foreach (var employee in employees)
-{
-    if (employee.Id.ToString() == search ||
-        employee.FullName.ToLower().Contains(search.ToLower()) ||
-        employee.Position.ToString() == search ||
-        employee.Department.ToString() == search)
-    {
-        result.Add(employee);
-    }
-}*/
+/*  var result = employees.FindAll(
+    temp =>
+        temp.Id.ToString() == search ||
+        temp.FullName.ToLower().Contains(search.ToLower()) ||
+        temp.Position.ToString() == search ||
+        temp.Department.ToString() == search);*/
