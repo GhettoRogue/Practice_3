@@ -2,9 +2,9 @@
 
 var employees = new List<Employee>()
 {
-    new Employee() { Id = 1, FullName = "Vladimir Ignatiew", Position = "Engineer", Department = "Development" },
-    new Employee() { Id = 2, FullName = "Mike Johnson", Position = "Manager", Department = "Sales" },
-    new Employee() { Id = 3, FullName = "John Smith", Position = "Accountant", Department = "Financial" }
+    new () { Id = 1, FullName = "Vladimir Ignatiew", Position = "Engineer", Department = "Development" },
+    new () { Id = 2, FullName = "Mike Johnson", Position = "Manager", Department = "Sales" },
+    new () { Id = 3, FullName = "John Smith", Position = "Accountant", Department = "Financial" }
 };
 
 var search = UserInput();
@@ -31,12 +31,10 @@ static void FindEmployees(string search, List<Employee> employees)
         {
             result.Add(item);
         }
-        
+
         if (result.Count > 0)
         {
             Console.WriteLine($"Found {result.Count} employee.");
-            
-            
             foreach (var employee in result)
             {
                 Console.WriteLine(
